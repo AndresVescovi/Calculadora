@@ -5,7 +5,7 @@ import { Component} from "react"
 class Calculator extends Component {
     constructor() {
         super();
-        this.setState = { chain: ''}
+        this.state = { chain: ""}
     }
 
         one = () =>{
@@ -60,20 +60,30 @@ class Calculator extends Component {
         
 
 
-selector = () => {
-        
+selector = (a) => {
+        const value = a;
+        switch(value) {
+            case 'clear':
+                this.setState({ chain: ''});
+                break;
+            case 'equal':
+                this.calculate();
+                break;
+            default:
+                this.setState({ chain: this.state.chain + value});
+        }
     }
     calculate = () => {
             // eslint-disable-next-line no-eval
-            const result = eval(this.state.data);
-            this.setState({data: result});
+            const result = eval(this.state.chain);
+            this.setState({chain: result});
       
     }
 
         render() {
     return(
         <div className="conteiner">
-           <div className="dispaly"><p>{this.props.chain}</p></div> 
+           <div className="dispaly"><p>{this.state.chain}</p></div> 
             
             
             <div className="buttom">
