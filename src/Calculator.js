@@ -82,36 +82,37 @@ selector = (a) => {
 
         render() {
     return(
-        <div className="conteiner">
-           <div className="dispaly"><p>{this.state.chain}</p></div> 
-            
-            
-            <div className="buttom">
-                <button onClick={this.seven} className="number" value="7" >7</button>
-                 <button onClick={this.eigth} className="number">8</button>
-                <button onClick={this.nine} className="number">9</button>
-                <button onClick={this.divide} className="number">/</button> 
+        <div className="container">
+            <div className="container-calculator">
+                <input type="text" className="display" value={this.state.chain}/>
+                
+                
+                <div className="row-buttons">
+                    <button onClick={this.seven} className="buttons" value="7" >7</button>
+                    <button onClick={this.eigth} className="buttons">8</button>
+                    <button onClick={this.nine} className="buttons">9</button>
+                    <button onClick={this.divide} className="buttons">/</button> 
+                </div>
+                <div className="row-buttons">
+                    <button onClick={this.four} className="buttons">4</button>
+                    <button onClick={this.five} className="buttons">5</button>
+                    <button onClick={this.six} className="buttons">6</button>
+                    <button onClick={this.subtract} className="buttons">-</button>
+                </div>
+                <div className="row-buttons">
+                    <button onClick={this.one} className="buttons">1</button>
+                    <button onClick={this.two} className="buttons">2</button>
+                    <button onClick={this.three} className="buttons">3</button>
+                    <button onClick={this.multiply} className="buttons">*</button>
+                </div>
+                <div className="row-buttons">
+                    <button onClick={this.zero} className="buttons">0</button>
+                    <button onClick={this.equal} className="buttons">=</button>
+                    <button onClick={this.clear} className="buttons">c</button>
+                    <button onClick={this.add} className="buttons">+</button>
+                </div>
+    
             </div>
-             <div className="buttom">
-                <button onClick={this.four} className="number">4</button>
-                <button onClick={this.five} className="number">5</button>
-                <button onClick={this.six} className="number">6</button>
-                <button onClick={this.subtract} className="number">-</button>
-            </div>
-            <div className="buttom">
-                <button onClick={this.one} className="number">1</button>
-                <button onClick={this.two} className="number">2</button>
-                <button onClick={this.three} className="number">3</button>
-                <button onClick={this.multiply} className="number">*</button>
-            </div>
-            <div className="buttom">
-                <button onClick={this.equal} className="number">0</button>
-                <button onClick={this.equal} className="number">=</button>
-                <button onClick={this.clear} className="number">c</button>
-                <button onClick={this.add} className="number">+</button>
-            </div>
- 
-
         </div>
     )
 }
